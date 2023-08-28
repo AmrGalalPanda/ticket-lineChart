@@ -20,7 +20,10 @@ export class TicketChartComponent {
   getLineChart(){
     this.chartOptions = {
       chart: {
-        type : 'areaspline'
+        type : 'areaspline',
+        zooming: {
+          mouseWheel: false
+      }
       },
       title:{
         text: 'Monthly average temperatue'
@@ -32,21 +35,24 @@ export class TicketChartComponent {
       xAxis: {
         categories:[
           'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'
-        ],
+        ],    
+            reversed: true
+
       
         
       },
       
       plotOptions: {
         series: {
-        
+          pointStart: 0, 
+
             color: '#8A74F9',
             fillColor: {
-                linearGradient: [0, 0, 0, 300],
+                linearGradient: [0, 0, 0, 400],
                 stops: [
-                    [0, "#8A74F9"],
-                    [0.80, "#fff"],
-                    [1, "#fff"]
+                    [0, "rgba(138, 116, 249, 0.4)"],
+                    [0.50, "rgba(255, 255, 255, 0.3)"],
+                    [1, "rgba(255, 255, 255, 0.0)"]
                 ]
             },
             marker: {
@@ -60,15 +66,17 @@ export class TicketChartComponent {
         }
     },
       yAxis:{
-        title:{
+       /*  title:{
           text:'Temperature °C'
-        },
+        }, */
         labels: {
           enabled: false
-      }
+      },
+      
+      
       },
       tooltip:{
-        valueSuffix:'LE'
+        valueSuffix:'users'
       },
       credits:{
         enabled:false
@@ -79,7 +87,8 @@ export class TicketChartComponent {
       rangeSelector:{
         enabled:true,
         dropdown: "always",
-        inputEnabled : true
+        inputEnabled : true,
+        
       },
       scrollbar:{
         enabled:false
@@ -90,7 +99,8 @@ export class TicketChartComponent {
 
   chartData = [
     {
-      name: 'Tokyo',
+      name: 'User',
+      showInLegend: false,  
       data: [100, 40, 60, 90, 100, 70, 60, 100, 0, 40, 70, 100]
       
     },
