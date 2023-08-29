@@ -1,3 +1,22 @@
-<div>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel eum voluptatem atque minima quam sequi laudantium. Nisi mollitia magni doloribus doloremque quaerat tenetur saepe voluptas vel quis debitis! Tenetur, ut.</p>
-</div>
+<div class="card" >
+    <div class="card-body">
+      <h5 class="card-title">عرض التذكرة الخاصة بالفيلم</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+    <input disabled type="text" value="Enter text to be sdsdcopied" #userinput> 
+    <button (click)="copyInputMessage(userinput)" value="click to copy" >Copy from Textbox</button>
+
+    <div class="input-group">
+      <span class="input-group-addon hidden-xs linkname">
+        <strong>My link</strong>
+      </span>
+      <span id="copyButton" class="input-group-addon btn" title="Click to copy">
+        <i class="fa fa-clipboard" aria-hidden="true"></i>
+      </span>
+      <input type="text" id="copyTarget" class="form-control" value="mylink.com">
+      <span class="copied">Copied !</span>
+    </div>
+  </div>

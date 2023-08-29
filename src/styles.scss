@@ -2,3 +2,471 @@
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+/*------------ Fonts ------------*/
+/*@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap");*/
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500&display=swap');
+
+
+@font-face {
+	font-family: NeoSansArabicBold;
+	src: url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic-Bold.eot);
+	src: url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic-Bold.eot?#iefix) format("embedded-opentype"), url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic-Bold.woff2) format("woff2"), url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic-Bold.woff) format("woff"), url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic-Bold.ttf) format("truetype"), url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic-Bold.svg#NeoSansArabic-Bold) format("svg");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap
+}
+ 
+@font-face {
+	font-family: NeoSansArabic;
+	src: url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic_1.eot);
+	src: url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic_1.eot?#iefix) format("embedded-opentype"), url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic_1.woff2) format("woff2"), url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic_1.woff) format("woff"), url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic_1.ttf) format("truetype"), url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic_1.svg#NeoSansArabic) format("svg");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap
+}
+
+@font-face {
+	font-family: NeoSansArabicMedium;
+	src: url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic-Medium.eot);
+	src: url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic-Medium.eot?#iefix) format("embedded-opentype"), url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic-Medium.woff2) format("woff2"), url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic-Medium.woff) format("woff"), url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic-Medium.ttf) format("truetype"), url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic-Medium.svg#NeoSansArabic-Medium) format("svg");
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap
+}
+/*------------ Fonts ------------*/
+/*------------ Colors ------------*/
+$color-text: #000;
+$color-orange: #e67020;
+$color-gray: #d9d9d9;
+$color-green: #0A463D;
+$color-lightGray: #f5f5f5;
+$color-yellow: #f5ee4b;
+$color-dark-blue: #161b4e;
+$color-red: #a6273b;
+$color-white: #fff;
+$category-1: #c53030;
+$category-2: #f79523;
+$category-3: #0e9dc2;
+$category-4: #3e64f0;
+$category-5: #179d86;
+$category-13: #fec111;
+$category-16: #008676;
+$category-17: #008676;
+$color-f1: #f1f1f1;
+/*------------ Colors ------------*/
+
+/*------------ Direction ------------*/
+
+body{
+    background-color: #F3F5F7 !important;
+}
+$direction: rtl;
+$left-direction: left;
+$right-direction: right;
+$rtl-flag: false;
+$font-SemiBold: 400;
+$font-Regular: 300;
+$font-Bold: 500;
+
+@if $direction==ltr {
+	$left-direction: left;
+	$right-direction: right;
+}
+@else {
+	$left-direction: right;
+	$right-direction: left;
+	$rtl-flag: true;
+}
+
+/*------------ Direction ------------*/
+
+/*------------ Mixins ------------*/
+
+
+
+ @mixin font-style($weight, $size, $lineHeight, $overflow, $color: null) {
+	@if $weight== "bol" or $weight== "BOL" {
+		/*font-weight: $font-Bold;*/
+		font-weight: 900;
+		font-family: NeoSansArabicMedium;
+	}
+	@else if $weight== "sbl" or $weight== "SBL" {
+		/*font-weight: $font-SemiBold;*/
+		font-weight: 700;
+		font-family: NeoSansArabicBold;
+	}
+	@else if $weight== "reg" or $weight== "REG" {
+		/*font-weight: $font-Regular;*/
+		font-weight: 400;
+		font-family: NeoSansArabic;
+	}
+	@else {
+		/*font-weight: $font-SemiBold;*/
+		font-weight: 700;
+		font-family: NeoSansArabicBold;
+	}
+	/*font-family: "Cairo", sans-serif;*/
+	/*font-family: 'Readex Pro', sans-serif;*/
+	font-size: $size;
+	line-height: $lineHeight;
+	overflow: $overflow;
+	color: $color;
+}
+
+@mixin icon-position($width, $height, $pos-x, $pos-y) {
+	content: "";
+	display: inline-block;
+	background: url(../../App_Images/icons.png) no-repeat $pos-x $pos-y;
+	width: $width;
+	height: $height;
+	/* docment how to use it */
+	/*
+    .example{  
+    position: relative;
+    padding-#{$left-direction}: 30px;
+    &:before {
+        @include icon-position(18px, 22px, -649px, -35px);
+        position: absolute;
+        #{$left-direction}: 0;
+    }
+    } */
+}
+
+/*------------ Mixins ------------*/
+
+/*------------ Framework ------------*/
+
+* {
+	box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 5px;
+}
+
+::-webkit-scrollbar-track {
+	background: $color-gray;
+}
+
+::-webkit-scrollbar-thumb {
+	background: $color-green;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: $color-green;
+}
+
+html {
+	font-size: 15px;
+	direction: $direction;
+}
+
+body {
+	direction: $direction;
+	text-align: $left-direction;
+	overflow-x: hidden;
+}
+.text-green{
+	color:$color-green;
+	}
+hr {
+	background-color: $color-green !important;
+	color: $color-green;
+	opacity: 0.5;
+
+	&:not([size]) {
+		height: 2px;
+	}
+}
+
+a {
+	text-decoration: none;
+
+	&:hover {
+		color: unset;
+	}
+
+	img {
+		object-fit: fill;
+		display: block;
+	}
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+
+	li {
+		text-decoration: none;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+}
+
+
+
+$sides: y, x, l, r, t, b;
+$pixels: 0, 9, 10, 12, 13, 15, 19, 20, 21, 25, 30, 30, 33, 45, 39, 50, 60, 70;
+$player-sizes: lg, sm;
+$img-max-width: ( img-16: 14.6%, img-20: 19%, img-23: 23.9%, img-24: 23%, img-25: 25%, img-27: 27%, img-33: 32.3%, img-50: 49%, img-49: 48%, img-40: 39%, img-60: 59%, img-67: 66%, img-80: 80%, img-100: 100%, img-839:839px, img-408:408px, );
+$breakpoints: ( /*   xs   : 576,*/ sm: 576, md: 768, lg: 992, xl: 1200, bs: 1360, xxl: 1440, xxxl: 1686, scren: 1920);
+
+@each $screen, $breakpoint in $breakpoints {
+	@if ($breakpoint==576) {
+		@each $class, $size in $img-max-width {
+			.#{$class} {
+				max-width: $size;
+			}
+		}
+
+		@each $space, $abbr in (margin: m, padding: p) {
+			@each $pixel in $pixels {
+				@each $side in $sides {
+					@if ($side==x) {
+						.#{$abbr}#{$side}-#{$pixel} {
+							#{$space}-left: ($pixel) + px !important;
+							#{$space}-right: ($pixel) + px !important;
+						}
+					}
+
+					@if ($side==y) {
+						.#{$abbr}#{$side}-#{$pixel} {
+							#{$space}-top: ($pixel) + px !important;
+							#{$space}-bottom: ($pixel) + px !important;
+						}
+					}
+
+					@if ($side==t) {
+						.#{$abbr}#{$side}-#{$pixel} {
+							#{$space}-top: ($pixel) + px !important;
+						}
+					}
+
+					@if ($side==b) {
+						.#{$abbr}#{$side}-#{$pixel} {
+							#{$space}-bottom: ($pixel) + px !important;
+						}
+					}
+
+					@if ($side==l) {
+						.#{$abbr}#{$side}-#{$pixel} {
+							#{$space}-left: ($pixel) + px !important;
+						}
+					}
+
+					@if ($side==r) {
+						.#{$abbr}#{$side}-#{$pixel} {
+							#{$space}-right: ($pixel) + px !important;
+						}
+					}
+				}
+			}
+		}
+
+		@media screen and (min-width: $breakpoint+px) {
+			@each $class, $size in $img-max-width {
+				.#{$class}-#{$screen} {
+					max-width: $size;
+				}
+			}
+
+			@each $space, $abbr in (margin: m, padding: p) {
+				@each $pixel in $pixels {
+					@each $side in $sides {
+						@if ($side==x) {
+							.#{$abbr}#{$side}-#{$screen}-#{$pixel} {
+								#{$space}-left: ($pixel) + px !important;
+								#{$space}-right: ($pixel) + px !important;
+							}
+						}
+
+						@if ($side==y) {
+							.#{$abbr}#{$side}-#{$screen}-#{$pixel} {
+								#{$space}-top: ($pixel) + px !important;
+								#{$space}-bottom: ($pixel) + px !important;
+							}
+						}
+
+						@if ($side==t) {
+							.#{$abbr}#{$side}-#{$screen}-#{$pixel} {
+								#{$space}-top: ($pixel) + px !important;
+							}
+						}
+
+						@if ($side==b) {
+							.#{$abbr}#{$side}-#{$screen}-#{$pixel} {
+								#{$space}-bottom: ($pixel) + px !important;
+							}
+						}
+
+						@if ($side==l) {
+							.#{$abbr}#{$side}-#{$screen}-#{$pixel} {
+								#{$space}-left: ($pixel) + px !important;
+							}
+						}
+
+						@if ($side==r) {
+							.#{$abbr}#{$side}-#{$screen}-#{$pixel} {
+								#{$space}-right: ($pixel) + px !important;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	@else {
+		@media screen and (min-width: $breakpoint+px) {
+			@each $class, $size in $img-max-width {
+				.#{$class}-#{$screen} {
+					max-width: $size;
+				}
+			}
+
+			@each $space, $abbr in (margin: m, padding: p) {
+				@each $pixel in $pixels {
+					@each $side in $sides {
+						@if ($side==x) {
+							.#{$abbr}#{$side}-#{$screen}-#{$pixel} {
+								#{$space}-left: ($pixel) + px !important;
+								#{$space}-right: ($pixel) + px !important;
+							}
+						}
+
+						@if ($side==y) {
+							.#{$abbr}#{$side}-#{$screen}-#{$pixel} {
+								#{$space}-top: ($pixel) + px !important;
+								#{$space}-bottom: ($pixel) + px !important;
+							}
+						}
+
+						@if ($side==t) {
+							.#{$abbr}#{$side}-#{$screen}-#{$pixel} {
+								#{$space}-top: ($pixel) + px !important;
+							}
+						}
+
+						@if ($side==b) {
+							.#{$abbr}#{$side}-#{$screen}-#{$pixel} {
+								#{$space}-bottom: ($pixel) + px !important;
+							}
+						}
+
+						@if ($side==l) {
+							.#{$abbr}#{$side}-#{$screen}-#{$pixel} {
+								#{$space}-left: ($pixel) + px !important;
+							}
+						}
+
+						@if ($side==r) {
+							.#{$abbr}#{$side}-#{$screen}-#{$pixel} {
+								#{$space}-right: ($pixel) + px !important;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+$category-colors: ( 1: $category-1, 2: $category-2, 3: $category-3, 4: $category-4, 5: $category-5, 13: $category-13, 16: $category-16, 17: $category-17, f1: $color-f1, );
+
+@each $id, $color in $category-colors {
+	.color-#{$id} {
+		color: $color !important;
+	}
+
+	.bg-#{$id} {
+		background-color: $color !important;
+	}
+
+	.bg-hover-#{$id} {
+		&:hover {
+			background-color: $color !important;
+
+			& > a,
+			& > a:hover,
+			& > a:visited,
+			& > a:active,
+			i,
+			i:hover {
+				background-color: $color !important;
+			}
+		}
+	}
+
+	.pseudo-#{$id} {
+		border-color: $color !important;
+
+		&:before,
+		&:after {
+			border-color: $color !important;
+		}
+	}
+
+	.quote-#{$id} {
+		&:before {
+			border-color: $color #0000 #0000 #0000 !important;
+		}
+
+		&:after {
+			border-color: #0000 #0000 $color #0000 !important;
+		} 
+	} 
+}  
+
+/*------------ Framework ------------*/
+
+/*------------ Page ------------*/
+
+
+
+.lineFont-19 {
+	@include font-style("sbl", 1.26rem, 1.5rem, visible, #0c192f);
+
+	&.red {
+		color: $color-red;
+	}
+
+	&.green {
+		color: $color-green;
+	}
+
+	&.regular {
+		font-weight: 400;
+	}
+
+	&.bold {
+		font-weight: 800
+	}
+
+	&.linHi-38 {
+		line-height: 2.53rem
+	}
+}
+
+
+
+
+	
+
+	@media screen and (max-width: 1920px) {
+	
+	}
+
+	@media screen and (min-width: 1440px) {
+
+
+
+		.container {
+			max-width: 1440px !important;
+			padding: 0 136px 0 1rem !important;
+		}
+
+		
+	}
+
