@@ -11,6 +11,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TicketSalesComponent } from './ticket-sales/ticket-sales.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { TicketSalesComponent } from './ticket-sales/ticket-sales.component';
     AppRoutingModule,
     HighchartsChartModule,
     HttpClientModule,
+    FontAwesomeModule,
     TranslateModule.forRoot({
       loader:{
         provide:TranslateLoader,
