@@ -1,5 +1,4 @@
-table
-{
+table {
     overflow-x: scroll !important;
 }
 /* styles.css */
@@ -21,22 +20,29 @@ table
     display: block;
 }
 .form-check-input:checked {
-
-background-color:#8A74F9 ;
-border: #8A74F9;
+    background-color: #8a74f9;
+    border: #8a74f9;
 }
-.bg-white
-{
+.bg-white {
     background-color: white !important;
 }
 .table {
     border-radius: 20px !important;
     padding: 5px;
-    thead{
-     th{
-	background-color: #E3E4E9;
-	color: #ABAAB1;
-    margin: 10px;
+    thead {
+        th {
+            background-color: #e3e4e9;
+            color: #abaab1;
+            margin: 10px;
+        }
+    }
 }
-
-}}
+.btn-move {
+    background-color: #8a74f9 !important;
+    border-color: #8a74f9 !important;
+}
+.active>.page-link, .page-link.active
+{
+    background-color: #8a74f9 !important;
+    border-color: #8a74f9 !important;
+}
