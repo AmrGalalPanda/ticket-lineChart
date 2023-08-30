@@ -26,15 +26,18 @@ export class TicketChartComponent {
       }
       },
       title:{
-        text: 'Monthly average temperatue'
-        , align:'right'
+        text: 'إحصائيات إستخدام القسيمة'
+        , align:'right',
+        color: '#FF00FF',
+
+        fontWeight: 400,
       },
       subtitle:{
         source: 'Source: worldclimate.com'
       },
       xAxis: {
         categories:[
-          'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'
+          'يناير', 'فراير', 'ماري', 'ابريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'اكتوبر', 'نوفمبر', 'ديسمبر'
         ],    
             reversed: true
 
@@ -43,6 +46,7 @@ export class TicketChartComponent {
       },
       
       plotOptions: {
+        
         series: {
           pointStart: 0, 
 
@@ -65,10 +69,12 @@ export class TicketChartComponent {
           }
         }
     },
+    
       yAxis:{
-       /*  title:{
-          text:'Temperature °C'
-        }, */
+        title:{
+          text:' '
+        },
+        
         labels: {
           enabled: false
       },
@@ -76,7 +82,16 @@ export class TicketChartComponent {
       
       },
       tooltip:{
-        valueSuffix:'users'
+        valueSuffix:'',
+        
+        shared: true,
+        useHTML: true,
+        headerFormat: '<table><tr><th colspan="2">{point.key}</th></tr>',
+        pointFormat: '<tr><td style="color: {series.color}">{series.name} </td>' +
+            '<td style="text-align: right"><b>{point.y} </b></td></tr>',
+        footerFormat: '</table>',
+        valueDecimals: 0,
+        
       },
       credits:{
         enabled:false
@@ -89,6 +104,7 @@ export class TicketChartComponent {
         dropdown: "always",
         inputEnabled : true,
         
+        
       },
       scrollbar:{
         enabled:false
@@ -99,8 +115,9 @@ export class TicketChartComponent {
 
   chartData = [
     {
-      name: 'User',
+      name: 'مستخدم',
       showInLegend: false,  
+      
       data: [100, 40, 60, 90, 100, 70, 60, 100, 0, 40, 70, 100]
       
     },

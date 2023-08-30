@@ -1,38 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* Importing Bootstrap SCSS file. */
-@import 'bootstrap/scss/bootstrap';
 /*------------ Fonts ------------*/
 /*@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap");*/
 @import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500&display=swap');
 
 
-@font-face {
-	font-family: NeoSansArabicBold;
-	src: url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic-Bold.eot);
-	src: url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic-Bold.eot?#iefix) format("embedded-opentype"), url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic-Bold.woff2) format("woff2"), url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic-Bold.woff) format("woff"), url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic-Bold.ttf) format("truetype"), url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic-Bold.svg#NeoSansArabic-Bold) format("svg");
-	font-weight: 700;
-	font-style: normal;
-	font-display: swap
-}
- 
-@font-face {
-	font-family: NeoSansArabic;
-	src: url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic_1.eot);
-	src: url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic_1.eot?#iefix) format("embedded-opentype"), url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic_1.woff2) format("woff2"), url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic_1.woff) format("woff"), url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic_1.ttf) format("truetype"), url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic_1.svg#NeoSansArabic) format("svg");
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap
-}
 
-@font-face {
-	font-family: NeoSansArabicMedium;
-	src: url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic-Medium.eot);
-	src: url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic-Medium.eot?#iefix) format("embedded-opentype"), url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic-Medium.woff2) format("woff2"), url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic-Medium.woff) format("woff"), url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic-Medium.ttf) format("truetype"), url(https://twasul-portal.devsmartly.com/content/webfonts/NeoSansArabic-Medium.svg#NeoSansArabic-Medium) format("svg");
-	font-weight: 900;
-	font-style: normal;
-	font-display: swap
-}
+
 /*------------ Fonts ------------*/
 /*------------ Colors ------------*/
 $color-text: #000;
@@ -57,9 +32,10 @@ $color-f1: #f1f1f1;
 
 /*------------ Direction ------------*/
 
-body{
-    background-color: #F3F5F7 !important;
+body {
+	background-color: #F3F5F7 !important;
 }
+
 $direction: rtl;
 $left-direction: left;
 $right-direction: right;
@@ -72,6 +48,7 @@ $font-Bold: 500;
 	$left-direction: left;
 	$right-direction: right;
 }
+
 @else {
 	$left-direction: right;
 	$right-direction: left;
@@ -84,27 +61,31 @@ $font-Bold: 500;
 
 
 
- @mixin font-style($weight, $size, $lineHeight, $overflow, $color: null) {
-	@if $weight== "bol" or $weight== "BOL" {
+@mixin font-style($weight, $size, $lineHeight, $overflow, $color: null) {
+	@if $weight=="bol" or $weight=="BOL" {
 		/*font-weight: $font-Bold;*/
 		font-weight: 900;
 		font-family: NeoSansArabicMedium;
 	}
-	@else if $weight== "sbl" or $weight== "SBL" {
+
+	@else if $weight=="sbl" or $weight=="SBL" {
 		/*font-weight: $font-SemiBold;*/
 		font-weight: 700;
 		font-family: NeoSansArabicBold;
 	}
-	@else if $weight== "reg" or $weight== "REG" {
+
+	@else if $weight=="reg" or $weight=="REG" {
 		/*font-weight: $font-Regular;*/
 		font-weight: 400;
 		font-family: NeoSansArabic;
 	}
+
 	@else {
 		/*font-weight: $font-SemiBold;*/
 		font-weight: 700;
 		font-family: NeoSansArabicBold;
 	}
+
 	/*font-family: "Cairo", sans-serif;*/
 	/*font-family: 'Readex Pro', sans-serif;*/
 	font-size: $size;
@@ -150,11 +131,11 @@ $font-Bold: 500;
 }
 
 ::-webkit-scrollbar-thumb {
-	background: $color-green;
+	background: #8A74F9;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: $color-green;
+	background: #8A74F9;
 }
 
 html {
@@ -167,9 +148,11 @@ body {
 	text-align: $left-direction;
 	overflow-x: hidden;
 }
-.text-green{
-	color:$color-green;
-	}
+
+.text-green {
+	color: $color-green;
+}
+
 hr {
 	background-color: $color-green !important;
 	color: $color-green;
@@ -210,18 +193,49 @@ ul {
 $sides: y, x, l, r, t, b;
 $pixels: 0, 9, 10, 12, 13, 15, 19, 20, 21, 25, 30, 30, 33, 45, 39, 50, 60, 70;
 $player-sizes: lg, sm;
-$img-max-width: ( img-16: 14.6%, img-20: 19%, img-23: 23.9%, img-24: 23%, img-25: 25%, img-27: 27%, img-33: 32.3%, img-50: 49%, img-49: 48%, img-40: 39%, img-60: 59%, img-67: 66%, img-80: 80%, img-100: 100%, img-839:839px, img-408:408px, );
-$breakpoints: ( /*   xs   : 576,*/ sm: 576, md: 768, lg: 992, xl: 1200, bs: 1360, xxl: 1440, xxxl: 1686, scren: 1920);
+$img-max-width: (
+	img-16: 14.6%,
+	img-20: 19%,
+	img-23: 23.9%,
+	img-24: 23%,
+	img-25: 25%,
+	img-27: 27%,
+	img-33: 32.3%,
+	img-50: 49%,
+	img-49: 48%,
+	img-40: 39%,
+	img-60: 59%,
+	img-67: 66%,
+	img-80: 80%,
+	img-100: 100%,
+	img-839:839px,
+	img-408:408px,
+);
+$breakpoints: (
+	/*   xs   : 576,*/
+	sm: 576,
+	md: 768,
+	lg: 992,
+	xl: 1200,
+	bs: 1360,
+	xxl: 1440,
+	xxxl: 1686,
+	scren: 1920
+);
 
-@each $screen, $breakpoint in $breakpoints {
+@each $screen,
+$breakpoint in $breakpoints {
 	@if ($breakpoint==576) {
-		@each $class, $size in $img-max-width {
+
+		@each $class,
+		$size in $img-max-width {
 			.#{$class} {
 				max-width: $size;
 			}
 		}
 
-		@each $space, $abbr in (margin: m, padding: p) {
+		@each $space,
+		$abbr in (margin: m, padding: p) {
 			@each $pixel in $pixels {
 				@each $side in $sides {
 					@if ($side==x) {
@@ -266,13 +280,16 @@ $breakpoints: ( /*   xs   : 576,*/ sm: 576, md: 768, lg: 992, xl: 1200, bs: 1360
 		}
 
 		@media screen and (min-width: $breakpoint+px) {
-			@each $class, $size in $img-max-width {
+
+			@each $class,
+			$size in $img-max-width {
 				.#{$class}-#{$screen} {
 					max-width: $size;
 				}
 			}
 
-			@each $space, $abbr in (margin: m, padding: p) {
+			@each $space,
+			$abbr in (margin: m, padding: p) {
 				@each $pixel in $pixels {
 					@each $side in $sides {
 						@if ($side==x) {
@@ -317,15 +334,19 @@ $breakpoints: ( /*   xs   : 576,*/ sm: 576, md: 768, lg: 992, xl: 1200, bs: 1360
 			}
 		}
 	}
+
 	@else {
 		@media screen and (min-width: $breakpoint+px) {
-			@each $class, $size in $img-max-width {
+
+			@each $class,
+			$size in $img-max-width {
 				.#{$class}-#{$screen} {
 					max-width: $size;
 				}
 			}
 
-			@each $space, $abbr in (margin: m, padding: p) {
+			@each $space,
+			$abbr in (margin: m, padding: p) {
 				@each $pixel in $pixels {
 					@each $side in $sides {
 						@if ($side==x) {
@@ -373,9 +394,20 @@ $breakpoints: ( /*   xs   : 576,*/ sm: 576, md: 768, lg: 992, xl: 1200, bs: 1360
 }
 
 
-$category-colors: ( 1: $category-1, 2: $category-2, 3: $category-3, 4: $category-4, 5: $category-5, 13: $category-13, 16: $category-16, 17: $category-17, f1: $color-f1, );
+$category-colors: (
+	1: $category-1,
+	2: $category-2,
+	3: $category-3,
+	4: $category-4,
+	5: $category-5,
+	13: $category-13,
+	16: $category-16,
+	17: $category-17,
+	f1: $color-f1,
+);
 
-@each $id, $color in $category-colors {
+@each $id,
+$color in $category-colors {
 	.color-#{$id} {
 		color: $color !important;
 	}
@@ -388,10 +420,10 @@ $category-colors: ( 1: $category-1, 2: $category-2, 3: $category-3, 4: $category
 		&:hover {
 			background-color: $color !important;
 
-			& > a,
-			& > a:hover,
-			& > a:visited,
-			& > a:active,
+			&>a,
+			&>a:hover,
+			&>a:visited,
+			&>a:active,
 			i,
 			i:hover {
 				background-color: $color !important;
@@ -415,9 +447,9 @@ $category-colors: ( 1: $category-1, 2: $category-2, 3: $category-3, 4: $category
 
 		&:after {
 			border-color: #0000 #0000 $color #0000 !important;
-		} 
-	} 
-}  
+		}
+	}
+}
 
 /*------------ Framework ------------*/
 
@@ -452,21 +484,60 @@ $category-colors: ( 1: $category-1, 2: $category-2, 3: $category-3, 4: $category
 
 
 
-	
 
-	@media screen and (max-width: 1920px) {
-	
+
+@media screen and (max-width: 1920px) {}
+
+@media screen and (min-width: 1360px) {
+
+
+
+	.container {
+		max-width: 1272px !important;
 	}
 
-	@media screen and (min-width: 1440px) {
+
+}
 
 
 
-		.container {
-			max-width: 1440px !important;
-			padding: 0 136px 0 1rem !important;
-		}
+.highcharts-root .highcharts-title {
+	color: #1C1C28 !important;
+	fill: #1C1C28  !important;
+	text-align: center;
+	font-feature-settings: 'clig' off, 'liga' off;
+	font-family: Neo Sans Arabic;
+	font-size: 14px !important;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 12.904px;
+	/* 92.173% */
+}
 
-		
-	}
+.highcharts-input-group .highcharts-label.highcharts-range-input text{
+	color: #99A1B7 !important;
+	fill: #99A1B7 !important;
+	text-align: center;
+	font-family: Inter;
+	font-size: 14px !important;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 12.904px;
+	/* 92.173% */
+}
 
+.highcharts-axis-labels.highcharts-xaxis-labels
+{
+	color: #9291A5 !important;
+	fill: #9291A5 !important;
+text-align: center;
+font-family: Neo Sans Arabic;
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: 16.13px; 
+letter-spacing: -0.24px;
+}
+app-data-table .dataTables_wrapper{
+	overflow-x: scroll;
+}

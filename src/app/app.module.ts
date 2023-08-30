@@ -11,15 +11,17 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TicketSalesComponent } from './ticket-sales/ticket-sales.component';
+import { DataTableComponent } from './data-table/data-table.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import {DataTablesModule} from 'angular-datatables'
 
 @NgModule({
   declarations: [
     AppComponent,
     TicketChartComponent,
     NavbarComponent,
-    TicketSalesComponent
+    TicketSalesComponent,
+    DataTableComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +29,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HighchartsChartModule,
     HttpClientModule,
     FontAwesomeModule,
+    DataTablesModule,
     TranslateModule.forRoot({
       loader:{
         provide:TranslateLoader,
