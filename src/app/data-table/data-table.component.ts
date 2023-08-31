@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class DataTableComponent {
   fullText = "سينما مصر , مول العرب , برج الأطنان , سرايا القبة المتفرعه من اي مكان";
-  truncatedText!: string;
+  truncatedText:string ="";
 
   ngOnInit(): void {
     this.truncateText();
@@ -20,7 +20,7 @@ export class DataTableComponent {
   truncateText() {
     const words = this.fullText.split(' ');
     if (words.length > 4) {
-      this.truncatedText = words.slice(0, 4).join(' ') + '...';
+      this.truncatedText = words.slice(0, 7).join(' ') + '...';
     } else {
       this.truncatedText = this.fullText;
    

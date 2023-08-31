@@ -1,6 +1,7 @@
 table {
     overflow-x: scroll !important;
 }
+
 /* styles.css */
 .tooltip-container {
     position: relative;
@@ -19,30 +20,115 @@ table {
 .tooltip-container:hover .tooltip {
     display: block;
 }
+
 .form-check-input:checked {
     background-color: #8a74f9;
     border: #8a74f9;
 }
+
 .bg-white {
     background-color: white !important;
 }
+
 .table {
     border-radius: 20px !important;
     padding: 5px;
+
     thead {
         th {
-            background-color: #e3e4e9;
+            background-color: #eff0f5;
             color: #abaab1;
             margin: 10px;
+            width: fit-content !important;
+            padding: 8px 30px;
+            white-space: nowrap;
         }
     }
 }
+
 .btn-move {
     background-color: #8a74f9 !important;
     border-color: #8a74f9 !important;
 }
-.active>.page-link, .page-link.active
-{
+
+.pagination {
+    .page-item a {
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        border: unset;
+        color: #7E8299;
+        text-align: center;
+        font-family: Inter;
+        font-size: 13.5px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 13.5px;
+        letter-spacing: -0.135px;
+        border-radius: 4.5px;
+        width: 27px;
+        height: 27px;
+    }
+}
+
+.form-outline {
+    .form-label {
+        color: #1C1C28;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: bold;
+        line-height: normal;
+    }
+
+}
+
+.form-check {
+    label {
+        color: #9C9D9F;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
+
+.dataTables_length {
+    select {
+
+        width: 52.5px;
+        border-radius: 6px;
+        border: 0.75px solid #DDD;
+        background: #FFF;
+        min-height: 32px;
+    }
+
+    label {
+        color: #333;
+        font-size: 10.5px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
+
+.active>.page-link,
+.page-link.active {
     background-color: #8a74f9 !important;
     border-color: #8a74f9 !important;
+    color: white !important;
+
+}
+
+
+.table-responsive td {
+    white-space: nowrap;
+    width: fit-content;
+    margin: 0 5px;
+    color: #1C1C28;
+
+    font-size: 13.279px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19.918px;
+    vertical-align: middle;
 }

@@ -22,7 +22,7 @@ export class TicketChartComponent {
       chart: {
         type : 'areaspline',
         zooming: {
-          mouseWheel: false
+          mouseWheel: true
       }
       },
       title:{
